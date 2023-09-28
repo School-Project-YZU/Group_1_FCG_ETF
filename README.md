@@ -1,5 +1,35 @@
-# FCG_ETF
+# 第一信託天然氣 ETF 預測
 
-- Using a multivariate time series model to predict FCG ETF.
+## 專案描述
 
+### 研究動機
+第一信託天然氣 ETF (First Trust Natural Gas ETF, FCG) 是一種交易所交易基金，旨在追求與 ISE-Revere Natural Gas™ 指數相對應的投資結果，該指數反映了天然氣股票市場的價格和收益率（扣除費用和支出前）。台灣目前最大宗的發電方式是火力發電，但由於火力發電使用化石燃料，因此其環境負荷相對較高。近年來，台灣政府積極推動能源轉型，減少對化石燃料的依賴，增加可再生能源的使用。天然氣是一種排碳量較少的化石燃料，因此預測 FCG 的供需情況，可以促進能源轉型，增加可再生能源的使用，實現能源永續發展的目標。
 
+### 資料描述
+1. 第一信託天然氣 ETF：
+第一信託天然氣 ETF (First Trust Natural Gas ETF, FCG) 是一種基於天然氣市場表現的交易型基金。
+Ref: https://finance.yahoo.com/quote/FCG/history?p=FCG
+
+2. 國際油價：(每日公布)
+國際油價對於天然氣價格有著明顯的影響，因為許多天然氣產品是與石油相關的。
+Ref: https://data.gov.tw/dataset/6029
+
+3. 天然氣庫存量：(每週公布)
+天然氣庫存量是個即時數據，受天氣、季節、供需等因素的影響，可以反映短期的供需變化，進而影響天然氣ETF。
+Ref: https://ir.eia.gov/ngs/ngs.html
+
+4. 天然氣生產量：(每月公布)
+天然氣生產量會長期影響天然氣 ETF。當生產量上升，預期供應增加，可能使天然氣價格下跌 ; 反之，可能導致天然氣價格上漲。
+Ref: https://www.eia.gov/dnav/ng/hist/n9010us2m.htm
+
+5. 天然氣供應量：(每週公布)
+天然氣供應量與天然氣價格之間存在著密切的關係。供應量的增加或減少可以對天然氣價格產生影響，並且這種關係可以在短期和長期內產生效應。
+Ref: https://data.gov.tw/dataset/160058
+
+6. 聯邦基本利率：(每月公布)
+利率上升，投資及投機成本提高，人們更偏好保守的定存，借錢困難，資金成本上升，可抑制投機資金。因此，聯邦基本利率是影響天然氣 ETF 的重要因素之一。
+Ref: https://fred.stlouisfed.org/series/FEDFUNDS
+
+7. 消費者物價指數：(每月公布)
+其變化反映了整個經濟的通貨膨脹或通貨緊縮的情況。嚴重的通膨或緊縮都會影響民眾對各項生活所需的消費，天然氣在其中。根據消費者物價指數可以判斷該段時間的指標是否有嚴重變化。
+Ref: https://nstatdb.dgbas.gov.tw/dgbasall/webMain.aspx?sys=210&funid=A030101015
